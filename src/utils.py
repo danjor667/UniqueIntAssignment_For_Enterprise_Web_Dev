@@ -1,9 +1,10 @@
 """
-usefull custom functions and class for the program
+useful custom functions and class for the program
 """
 from typing import Iterable
 
-class CheckDouble():
+
+class CheckDouble:
     """
     class to check for duplicate
     entries in the file
@@ -30,10 +31,10 @@ class CheckDouble():
         return self.check.get(element)
 
 
-def read_file(file_path: str):
+def readAndProcessFile(file_path: str) -> Iterable[int]:
     """
-    reading the contenet of the file and generating
-    on demand to reduce memory usage for storing it
+    reading the content of the file and generating
+    it on demand to reduce memory usage storing all the items
     :param file_path:
     :return:
     """
@@ -50,6 +51,23 @@ def read_file(file_path: str):
                 yield integer
 
 
-def generator_sort(generator: Iterable[int]):
-    yield from sorted(generator)
+def selection_sort(arr: list[int], reverse=False) -> None:
+    """
+    custom sorting function
+    implementing the selection sort algorithm
+     to sort the array of integers
+    """
+    for i in range(len(arr)-1, 0, -1):
+        for j in range(i):
+            if not reverse:
+                if arr[j] > arr[i]:
+                    arr[i], arr[j] = arr[j], arr[i]
+            else:
+                if arr[j] < arr[i]:
+                    arr[i], arr[j] = arr[j], arr[i]
 
+
+def writeFile(integers, output_file_path: str) -> None:
+    with open(output_file_path, "w") as f:
+        for integer in integers:
+            f.write(str(integer)+"\n")
