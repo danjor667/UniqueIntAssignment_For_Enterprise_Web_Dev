@@ -1,8 +1,6 @@
 """
 useful custom functions and class for the program
 """
-from typing import Iterable
-
 
 class CheckDouble:
     """
@@ -31,7 +29,7 @@ class CheckDouble:
         return self.check.get(element)
 
 
-def readAndProcessFile(file_path: str) -> Iterable[int]:
+def readAndProcessFile(file_path: str):
     """
     reading the content of the file and generating
     it on demand to reduce memory usage storing all the items
@@ -51,7 +49,7 @@ def readAndProcessFile(file_path: str) -> Iterable[int]:
                 yield integer
 
 
-def selection_sort(arr: list[int], reverse=False) -> None:
+def selection_sort(arr, reverse=False):
     """
     custom sorting function
     implementing the selection sort algorithm
@@ -68,6 +66,9 @@ def selection_sort(arr: list[int], reverse=False) -> None:
 
 
 def writeFile(integers, output_file_path: str) -> None:
+    """
+    writing the integers in the corresponding output file
+    """
     with open(output_file_path, "w") as f:
         for integer in integers:
             f.write(str(integer)+"\n")

@@ -7,7 +7,7 @@
     Run the UniqueInt.py file and all file in the `../data/sample_data_input/` directory will be read and the corresponding output file will be created in the `../data/sample_data_result` directory
   #### example `python3 UniqueInt.py`
 - ### 2
-    or pass the file path of the file you want to create the resulting file as argument when running the UniqueInt.py and the corresponding result will be created in the data directory
+    or pass the file path of the file you want to create the resulting file as argument when executing the UniqueInt.py and the corresponding result will be created in the argument_data_result directory
     #### example:
     `# python3 UniqueInt.py school/enterpriseWebDev/test.txt`
 
