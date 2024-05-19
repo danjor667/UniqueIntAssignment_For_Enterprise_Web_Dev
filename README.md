@@ -1,6 +1,6 @@
 # Assingment Instructions
 
-- Read integers from files in a certain directory and write unique int in ascending oder in an output file
+- Read integers from files in a certain directory and write unique int in ascending oder in the corresponding output file
 # Usage
 
 - ### 1 
