@@ -1,6 +1,11 @@
 """
 useful custom functions and class for the program
 """
+import os
+
+file = os.path.abspath(__file__)
+current_dir = os.path.dirname(file)
+BASE = os.path.dirname(current_dir)
 
 class CheckDouble:
     """
@@ -72,3 +77,9 @@ def writeFile(integers, output_file_path: str) -> None:
     with open(output_file_path, "w") as f:
         for integer in integers:
             f.write(str(integer)+"\n")
+
+
+def runtime_log(runtime, file, mode="a"):
+    path = BASE+"/Info.txt"
+    with open(path, mode) as f:
+        f.write(f"Memory Usage and runtime for file {file}:\nmem_Usage: #TODO\nRunTime: {runtime*1000} milli secs\n\n")
